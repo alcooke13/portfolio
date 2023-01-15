@@ -7,7 +7,10 @@ const ButtonStyled = styled.button`
   border: 2px solid palevioletred;
   color: black;
   padding: 0.5rem;
-  min-width: 6rem;
+  padding-left: calc(8px + 1.5625vw);
+  padding-right: calc(8px + 1.5625vw);
+  width: 100%;
+  
 `
 
 
