@@ -1,13 +1,23 @@
 import './App.css';
 import MainContainer from './container/MainContainer';
+import styled from 'styled-components';
 
 function App() {
+  
+ 
+  
+  
   return (
-    <div className="App">
-      <h1>Work in progress</h1>
+    <StyledMain className="App">
       <MainContainer />
-    </div>
+    </StyledMain>
   );
+
+  
 }
+
+const StyledMain = styled.div`
+  
+`
 
 export default App;

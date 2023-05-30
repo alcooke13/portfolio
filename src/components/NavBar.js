@@ -1,7 +1,7 @@
 import Button from "./Button"
 import styled from "styled-components"
 
-const StyledUl = styled.div`
+const ButtonsContainer = styled.div`
 
     display: flex;
     flex-direction: column;
@@ -9,17 +9,16 @@ const StyledUl = styled.div`
     
 
     @media (max-width: 900px) {
-    display: flex;
-    justify-content: left;
-    flex-direction: row;
+    gap: 0.1em;
     }
 
 `
 
 
-function NavBar({onAboutMeClick, onCvClick, onProjectClick}) {
+function NavBar({onAboutMeClick, onCvClick, onProjectClick, onContactsClick}) {
   return (
-    <StyledUl>
+    
+    <ButtonsContainer>
         <div>
             <Button onClick={onAboutMeClick}>About Me</Button >
         </div>
@@ -27,9 +26,12 @@ function NavBar({onAboutMeClick, onCvClick, onProjectClick}) {
             <Button onClick={onProjectClick}>Projects</Button>
         </div>
         <div>
-            <Button onClick={onCvClick}>Cv</Button>
+            <Button onClick={onCvClick}>Skills</Button>
         </div>
-    </StyledUl>
+        <div>
+            <Button onClick={onContactsClick}>Links</Button>
+        </div>
+    </ButtonsContainer>
   )
 }
 

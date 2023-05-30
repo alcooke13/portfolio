@@ -1,6 +1,6 @@
 import MainPage from "../components/MainPage"
 import Sidebar from "../components/Sidebar"
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import styled from "styled-components"
 
 const Section = styled.section`
@@ -15,32 +15,35 @@ const Section = styled.section`
 @media (max-width:900px) {
     display: flex;
     flex-direction: column;
+    min-height: max-content;
 }
 
 `
 
 
-
-
 function MainContainer() {
-    const [pageContent, setPageContent] = useState("aboutMe")
-
+    const [pageContent, setPageContent] = useState("aboutMe");
+    
     const onAboutMeClick = () => {
-        setPageContent("aboutMe")
+        setPageContent("aboutMe");
     };
 
     const onProjectsClick = () => {
-        setPageContent("projects")
+        setPageContent("projects");
     };
 
     const onCvClick = () => {
-        setPageContent("cv")
+        setPageContent("cv");
+    };
+
+    const onContactsClick = () => {
+        setPageContent("contacts");
     };
 
     return (
     <Section className="MainContainer">
-        <Sidebar onAboutMeClick={onAboutMeClick} onCvClick={onCvClick} onProjectsClick={onProjectsClick} />
-        <MainPage pageContent= {pageContent}/>
+        <Sidebar onAboutMeClick={onAboutMeClick} onCvClick={onCvClick} onProjectsClick={onProjectsClick} onContactsClick={onContactsClick}/>
+        <MainPage pageContent= {pageContent} className="mainPage"/>
     </Section>
   )
 }
