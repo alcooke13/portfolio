@@ -9,21 +9,11 @@ function NavBar({setPageContent}) {
         setPageContent("projects");
     };
 
-    const onCvClick = () => {
-        setPageContent("cv");
-    };
-
-    const onContactsClick = () => {
-        setPageContent("contacts");
-    };
-
     return (
     
     <NavContainer>
-            <Li onClick={onAboutMeClick}>About Me</Li >
-            <Li onClick={onProjectsClick}>Projects</Li>
-            <Li onClick={onCvClick}>Skills</Li>
-            <Li onClick={onContactsClick}>Links</Li>
+        <Li onClick={onAboutMeClick}>About</Li >
+        <Li onClick={onProjectsClick}>Projects</Li>
     </NavContainer>
   );
 };
@@ -32,16 +22,18 @@ const NavContainer = styled.ul`
     display: flex;
     justify-content: space-evenly;
     gap: 1em;
-    
+    margin-right: 5%;
 
     @media (max-width: 900px) {
-    gap: 0.1em;
+    margin-right: 2%;
+    font-size: 0.5em;
     }
 `
 
 const Li = styled.li`
     list-style: none;
     font-size: 1.7em;
+    cursor: pointer;
 `
 
 export default NavBar;

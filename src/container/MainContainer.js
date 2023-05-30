@@ -33,41 +33,65 @@ function MainContainer() {
 
 const Main = styled.main`
     min-height: 100vh;
+    position: relative;
 
 @media (max-width:900px) {
+    min-width: fit-content;
     
 }
 
+`
+const Header = styled.header`
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px;
+    
 `
 
 const PictureBlock = styled.div`
    display: flex;
    align-items: center;
    gap: 25px;
-`
+   margin-left: 5%;
 
-const Header = styled.header`
-    display: flex;
-    justify-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
-    align-items: center;
+@media (max-width: 900px) {
+    margin-left: 2%;
+}
 `
 
 const Img = styled.img`
     max-width: 125px;
     max-height: 125px;
     border-radius: 50%;
+    
+@media (max-width:900px) {
+    max-width: 75px;
+    max-height: 75px;
+    
+}
 `
 
 const H1 = styled.h1`
     margin: 0;
     padding: 0;
     font-size: 1.7em;
+
+@media (max-width:900px) {
+    font-size: 0.8em;
+    
+}
+
 `
 const Content = styled.div`
+    margin-top: 0.5em;
     border: 2px solid red;
-    
+    min-height: 80vh;
+    max-height: fit-content;
+
 `
 
 export default MainContainer;
