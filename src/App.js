@@ -1,23 +1,15 @@
 import './App.css';
 import MainContainer from './container/MainContainer';
-import styled from 'styled-components';
 
 function App() {
   
- 
-  
   
   return (
-    <StyledMain className="App">
+    <div className="App">
       <MainContainer />
-    </StyledMain>
+    </div>
   );
 
-  
-}
-
-const StyledMain = styled.div`
-  
-`
+};
 
 export default App;
