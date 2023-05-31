@@ -13,7 +13,7 @@ function ProjectTwoView() {
           <li>MongoDB</li>
           <li>Express</li>
         </ul>
-        <a href='https://github.com/alcooke13/climate_quiz'>
+        <a href='https://github.com/alcooke13/climate_quiz' target="_blank">
           <button>Project Link</button>
         </a>
     </ProjectContainer>

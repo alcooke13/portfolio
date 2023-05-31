@@ -14,7 +14,7 @@ function ProjectOneView() {
           <li>Flask</li>
           <li>PostgreSQL</li>
         </ul>
-        <a href='https://github.com/alcooke13/fantasy_story_project'>
+        <a href='https://github.com/alcooke13/fantasy_story_project' target="_blank">
           <button>Project Link</button>
         </a>
     </ProjectContainer>
