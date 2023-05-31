@@ -61,9 +61,9 @@ const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background:linear-gradient(to left, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
     padding: 5px;
-    
+    color: #fff;
 `
 
 const PictureBlock = styled.div`
@@ -101,8 +101,6 @@ const H1 = styled.h1`
 
 `
 const Content = styled.div`
-    margin-top: 0.5em;
-    border: 2px solid red;
     min-height: 80vh;
     max-height: fit-content;
     padding: 1em;
