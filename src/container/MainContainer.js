@@ -1,34 +1,48 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import NavBar from "../components/NavBar";
 import profilePic from "../images/profilepic.jpg"
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
 import Contacts from "../components/Contacts";
+import ProjectOneView from "../components/projectViews/ProjectOneView";
+import ProjectTwoView from "../components/projectViews/ProjectTwoView";
+import ProjectThreeView from "../components/projectViews/ProjectThreeView"
+import ProjectFourView from "../components/projectViews/ProjectFourView";
 
 function MainContainer() {
     const [pageContent, setPageContent] = useState("aboutMe");
-    
+
     return (
-    <Main>
-        <Header>
-            <PictureBlock>
-                <Img src={profilePic} alt='headshot of me' />
-                <H1>Alistair Cooke</H1>
-            </PictureBlock>
-            <NavBar setPageContent={setPageContent}/>
-        </Header>
-        <Content>
+        <Main>
+            <Header>
+                <PictureBlock>
+                    <Img src={profilePic} alt='headshot of me' />
+                    <H1>Alistair Cooke</H1>
+                </PictureBlock>
+                <NavBar setPageContent={setPageContent} />
+            </Header>
+            <Content>
 
-        {pageContent === "aboutMe" ?  <AboutMe /> : ""}
-        
-        {pageContent === "projects" ? <Projects /> : ""}
-        
-        {pageContent === "contacts" ? <Contacts /> : ""}
+                {pageContent === "aboutMe" ? <AboutMe /> : ""}
 
-        </Content>
-    </Main>
-  );
+                {pageContent === "projects" ? <Projects setPageContent={setPageContent}/> : ""}
+
+                {pageContent === "contacts" ? <Contacts /> : ""}
+                
+                {pageContent === "projectOne" ? <ProjectOneView /> : ""}
+                
+                {pageContent === "projectTwo" ? <ProjectTwoView /> : ""}
+                
+                {pageContent === "projectThree" ? <ProjectThreeView /> : ""}
+                
+                {pageContent === "projectFour" ? <ProjectFourView /> : ""}
+
+
+
+            </Content>
+        </Main>
+    );
 };
 
 const Main = styled.main`
