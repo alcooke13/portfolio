@@ -70,6 +70,7 @@ const Button = styled.button`
   cursor: pointer;
   height: 3em;
   width: 10em;
+  font-size: 1.3rem;
 
   &:hover {
   border-color: black;
@@ -79,11 +80,15 @@ const Button = styled.button`
 
 const StyledDiv = styled.div`
   align-self: flex-start;
+
+  li {
+    font-size: 1.3rem;
+  }
 `
 
 const Img = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
   border-radius: 0.4em;
   padding: 1em;
 `

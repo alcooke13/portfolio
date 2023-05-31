@@ -1,9 +1,19 @@
 import React from 'react'
 import styled from 'styled-components';
-import projectOneImg from '../images/project_one_img.png'
-import projectTwoImg from '../images/project_two_img.png'
-import projectThreeImg from '../images/project_three_img.png'
 import testImg from '../../src/images/placeholder.png'
+import pythonLogo from '../../src/images/python.png'
+import htmlLogo from '../../src/images/html.png'
+import cssLogo from '../../src/images/css.png'
+import psqlLogo from '../../src/images/psql.png'
+import flaskLogo from '../../src/images/flask.png'
+import reactLogo from '../../src/images/react.png'
+import reactNativeLogo from '../../src/images/native.png'
+import mongoDBLogo from '../../src/images/mongodb.png'
+import expressLogo from '../../src/images/express.png'
+import jsLogo from '../../src/images/jjs.png'
+import springLogo from '../../src/images/spring.png'
+import javaLogo from '../../src/images/java.png'
+import tsLogo from '../../src/images/typescript.png'
 
 function Projects({ setPageContent }) {
     return (
@@ -14,7 +24,13 @@ function Projects({ setPageContent }) {
                     <InsideContainer>
                         <Header>
                             <H3>Fantasy Store</H3>
-                            <Img src={projectOneImg} alt='Logos of Python, Css, Html, Flask and Postgres' />
+                            <Box>
+                            <Img src={pythonLogo} alt='Python Logo' />
+                            <Img src={htmlLogo} alt='HTML Logo' />
+                            <Img src={cssLogo} alt='CSS Logo' />
+                            <Img src={flaskLogo} alt='FLASK Logo' />
+                            <Img src={psqlLogo} alt='PostgreSQL Logo' />
+                            </Box>
                         </Header>
                         <p>
                             A web app which simplifies the management of a fantasy themed store selling products enabling seamless inventory control.
@@ -27,7 +43,12 @@ function Projects({ setPageContent }) {
                     <InsideContainer>
                         <Header>
                             <H3>Climate Quiz</H3>
-                            <Img src={projectTwoImg} alt='Logos of JavaScript, React, MongoDB and Express' />
+                            <Box>
+                            <Img src={jsLogo} alt='JavaScript Logo' />
+                            <Img src={reactLogo} alt='React Logo' />
+                            <Img src={expressLogo} alt='Express Logo'  id='express'/>
+                            <Img src={mongoDBLogo} alt='MongoDB Logo' />
+                            </Box>
                         </Header>
                         <p>
                             A full stack app in the form of an educational quiz on climate change and the different factors which affect it.
@@ -40,7 +61,13 @@ function Projects({ setPageContent }) {
                     <InsideContainer>
                         <Header>
                             <H3>Group Up</H3>
-                            <Img src={projectThreeImg} alt='Logos of TypeScript, Java, React Native, Postgres and Spring Boot' />
+                            <Box>
+                            <Img src={javaLogo} alt='Java Logo' />
+                            <Img src={tsLogo} alt='TypeScript Logo' />
+                            <Img src={reactNativeLogo} alt='React Native Logo' id='native'/>
+                            <Img src={springLogo} alt='Spring Logo' />
+                            <Img src={psqlLogo} alt='PostgreSQL Logo' />
+                            </Box>
                         </Header>
                         <p>
                             A mobile app designed to ease planning events and group gatherings with friends. With interactive features such as polls to ease the decision making process when planning a new gathering.
@@ -53,7 +80,13 @@ function Projects({ setPageContent }) {
                     <InsideContainer>
                         <Header>
                             <H3>Fantasy Store 2.0</H3>
-                            <Img src={projectThreeImg} alt='Logos JavaScript, Java, React, Postgres and Spring Boot' />
+                            <Box>
+                            <Img src={javaLogo} alt='Java Logo' />
+                            <Img src={jsLogo} alt='JavaScript Logo' />
+                            <Img src={reactLogo} alt='React Logo' />
+                            <Img src={springLogo} alt='Spring Logo' />
+                            <Img src={psqlLogo} alt='PostgreSQL Logo' />
+                            </Box>
                         </Header>
                         <p>
                             An updated and improved version of my first project. Which continues to simplify the management of a fantasy-themed store selling products using different programming languages and technologies.
@@ -75,17 +108,40 @@ const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-`
 
+    h3{
+        font-size: 1.4rem;
+    }
+`
+const Box = styled.div`
+    display: flex;
+    gap: 0.5em;
+
+    img:last-child {
+        height: 37px;
+    }
+
+    #express {
+        width: 60px;
+        height: 40px;
+    }
+   
+    #native {
+        width: 50px;
+    }
+
+`
 
 const H2 = styled.h2`
     text-align: center;
-    font-size: 2em;
+    font-size: 2rem;
 
 `
 
 const Img = styled.img`
-    width: 125px;
+    width: 35px;
+    height: 35px;
+
 `
 
 const ImgTest = styled.img`
@@ -101,8 +157,7 @@ const ImgTest = styled.img`
 `
 
 const H3 = styled.h3`
-    margin-bottom: 0.25em;
-    font-size: 1.5em;
+    margin-bottom: 20em;
 `
 
 const ProjectContainer = styled.div`
@@ -135,8 +190,9 @@ const Button = styled.button`
     border-radius: .3em;
     cursor: pointer;
     align-self: center;
-    height: 4em;
+    height: 3em;
     width: 12em;
+    font-size: 1.3rem;
 
     &:hover {
     border-color: black;

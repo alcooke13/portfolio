@@ -73,6 +73,7 @@ const Button = styled.button`
     cursor: pointer;
     height: 3em;
     width: 10em;
+    font-size: 1.3rem;
 
     &:hover {
     border-color: black;
