@@ -105,7 +105,7 @@ const Content = styled.div`
     border: 2px solid red;
     min-height: 80vh;
     max-height: fit-content;
-
+    padding: 1em;
 `
 
 export default MainContainer;
