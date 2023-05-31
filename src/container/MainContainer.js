@@ -78,8 +78,8 @@ const PictureBlock = styled.div`
 `
 
 const Img = styled.img`
-    max-width: 125px;
-    max-height: 125px;
+    max-width: 100px;
+    max-height: 100px;
     border-radius: 50%;
     
 @media (max-width:900px) {
@@ -106,6 +106,13 @@ const Content = styled.div`
     min-height: 80vh;
     max-height: fit-content;
     padding: 1em;
+    margin-left: 15%;
+    margin-right: 15%;
+
+    @media (max-width: 820px){
+    margin-left: 0;
+    margin-right: 0;
+  }
 `
 
 export default MainContainer;
