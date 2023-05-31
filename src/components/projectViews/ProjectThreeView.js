@@ -18,7 +18,7 @@ function ProjectThreeView() {
       <li>PostgreSQL</li>
       <li>Spring Boot</li>
     </ul>
-    <a href='https://github.com/alcooke13/group_app' target="_blank">
+    <a href='https://github.com/alcooke13/group_app' target="_blank" rel='noopener'>
       <button>Project Link</button>
     </a>
 </ProjectContainer>
