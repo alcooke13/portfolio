@@ -48,6 +48,7 @@ function MainContainer() {
 const Main = styled.main`
     min-height: 100vh;
     position: relative;
+    background-color: hsl(240, 90%, 96%);
 
 @media (max-width:900px) {
     min-width: fit-content;
@@ -104,13 +105,9 @@ const Content = styled.div`
     min-height: 80vh;
     max-height: fit-content;
     padding: 1em;
-    margin-left: 15%;
-    margin-right: 15%;
-
-    @media (max-width: 820px){
-    margin-left: 0;
-    margin-right: 0;
-  }
+    max-width: 50em;
+    margin: auto;
+    width: 90%;
 `
 
 export default MainContainer;

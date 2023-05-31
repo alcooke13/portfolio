@@ -8,8 +8,8 @@ const paragraphAboutMe3 = "I am excited to leverage this solid foundation and co
 function AboutMe() {
   return (
     <AboutContainer>
+      <H2>About Me</H2>
       <AboutSection>
-        <H2>About Me</H2>
         <P>
           {paragraphAboutMe1}
         </P>
@@ -67,17 +67,19 @@ function AboutMe() {
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1em;
-  gap: 1em;
 `
 const H2 = styled.h2`
   text-align: center;
-  margin-bottom: 0.6em;
-
+  font-size: 2em;
 `
 
 const AboutSection = styled.section`
+  padding: 1em;
+  font-size: 1.3em;
 
+  @media (max-width: 800px){
+    font-size: 1em;
+  }
 `
 
 const SkillsSection = styled.section`
@@ -85,10 +87,13 @@ const SkillsSection = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
+  padding: 1em;
+  font-size: 1.3em;
 
   @media (max-width: 800px){
     display: flex;
     flex-direction: column;
+    font-size: 1em;
   }
 
 `

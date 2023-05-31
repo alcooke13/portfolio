@@ -4,25 +4,27 @@ import testImg from '../../images/placeholder.png'
 
 function ProjectTwoView() {
   return (
-    <ProjectContainer>
-      <Text>
-        <H2>Climate Quiz</H2>
-        <p>An educational game in the form of a quiz on the topic of climate change. The goal of the project was to create an interactive app that incorporated various question types, enabling users to explore the factors and consequences of climate change. Working as a team of four, we successfully completed the project within a week. We created APIs for the main features of the app to work such as the questions, users and keeping track of user’s score as they played the game. I enjoyed the experience of collaborating with my teammates, employing techniques such as pair programming and mob programming to tackle issues. As well as the workflow of using GitHub and Trello to divide tasks and merge our work. </p>
-      </Text>
-      <Img src={testImg} alt={"Project Picture"} />
-      <StyledDiv>
-        <h3>Tools Used</h3>
-        <ul>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>MongoDB</li>
-          <li>Express</li>
-        </ul>
-      </StyledDiv>
-      <a href='https://github.com/alcooke13/climate_quiz' target="_blank" rel='noopener'>
-        <Button>Project Link</Button>
-      </a>
-    </ProjectContainer>
+    <div>
+      <H2>Climate Quiz</H2>
+      <ProjectContainer>
+        <Text>
+          <p>An educational game in the form of a quiz on the topic of climate change. The goal of the project was to create an interactive app that incorporated various question types, enabling users to explore the factors and consequences of climate change. Working as a team of four, we successfully completed the project within a week. We created APIs for the main features of the app to work such as the questions, users and keeping track of user’s score as they played the game. I enjoyed the experience of collaborating with my teammates, employing techniques such as pair programming and mob programming to tackle issues. As well as the workflow of using GitHub and Trello to divide tasks and merge our work. </p>
+        </Text>
+        <Img src={testImg} alt={"Project Picture"} />
+        <StyledDiv>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>MongoDB</li>
+            <li>Express</li>
+          </ul>
+        </StyledDiv>
+        <a href='https://github.com/alcooke13/climate_quiz' target="_blank" rel="noreferrer">
+          <Button>Project Link</Button>
+        </a>
+      </ProjectContainer>
+    </div>
   );
 };
 
@@ -30,12 +32,17 @@ function ProjectTwoView() {
 const H2 = styled.h2`
   text-align: center;
   margin-bottom: 0.5em;
+  font-size: 2rem;
 `
 
 const Text = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
+
+  p{
+    font-size: 1.3rem;
+  }
 `
 
 const ProjectContainer = styled.div`
@@ -43,6 +50,11 @@ const ProjectContainer = styled.div`
   flex-direction: column;
   gap: 1em;
   align-items: center;
+  padding: 1em;
+  border: solid 2px black;
+  border-radius: 0.3em;
+  padding: 1em;
+  background-color: rgb(207, 207, 252);
 `
 
 const Button = styled.button`
@@ -51,6 +63,8 @@ const Button = styled.button`
   padding: 0.5em 1em;
   border-radius: .3em;
   cursor: pointer;
+  height: 3em;
+  width: 10em;
 
   &:hover {
   border-color: black;
@@ -66,5 +80,6 @@ const Img = styled.img`
   width: 250px;
   height: 250px;
   border-radius: 0.4em;
+  padding: 1em;
 `
 export default ProjectTwoView;
