@@ -4,13 +4,9 @@
 }
 
 li {
-    list-style: "-";
+    list-style: none;
 }
 
 p {
     line-height: 1.25;
 }
-
-/* h3 {
-    font-size: 1.4rem;
-} */

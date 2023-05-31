@@ -9,6 +9,8 @@ function AboutMe() {
   return (
     <AboutContainer>
       <H2>About Me</H2>
+      
+      <div className='inner-container'>
       <AboutSection>
         <P>
           {paragraphAboutMe1}
@@ -60,6 +62,7 @@ function AboutMe() {
           </ListContainer>
         </SkillCard>
       </SkillsSection>
+      </div>
     </AboutContainer>
   );
 };
@@ -67,10 +70,18 @@ function AboutMe() {
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  .inner-container {
+    border: solid 2px black;
+    border-radius: 0.3em;
+    padding: 1em;
+    background-color: rgb(207, 207, 252);
+  }
 `
 const H2 = styled.h2`
   text-align: center;
   font-size: 2em;
+  margin-bottom: 0.5em;
 `
 
 const AboutSection = styled.section`

@@ -37,10 +37,10 @@ function MainContainer() {
                 {pageContent === "projectThree" ? <ProjectThreeView /> : ""}
                 
                 {pageContent === "projectFour" ? <ProjectFourView /> : ""}
-
-
-
             </Content>
+            <Footer>
+                <h4>Made by Alistair Cooke</h4>
+            </Footer>
         </Main>
     );
 };
@@ -65,6 +65,16 @@ const Header = styled.header`
     background:linear-gradient(to left, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
     padding: 5px;
     color: #fff;
+`
+
+const Footer = styled.footer`
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    background:linear-gradient(to right, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
+    position: relative;
+    bottom: 0;
+    color: white;
 `
 
 const PictureBlock = styled.div`

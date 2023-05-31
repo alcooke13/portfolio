@@ -19,19 +19,27 @@ function ProjectThreeView() {
           </p>
         </Text>
         <Img src={testImg} alt={"Project Picture"} />
-        <StyledDiv>
-          <h3>Tools Used</h3>
-          <ul>
-            <li>TypeScript</li>
-            <li>Java</li>
-            <li>React Native</li>
-            <li>PostgreSQL</li>
-            <li>Spring Boot</li>
-          </ul>
-        </StyledDiv>
         <a href='https://github.com/alcooke13/group_app' target="_blank" rel="noreferrer">
           <Button>Project Link</Button>
         </a>
+        <StyledDiv>
+          <h3>Tools Used</h3>
+          <InnerBox>
+            <div>
+            <li>TypeScript</li>
+            <li>Java</li>
+          
+            </div>
+            <div>
+            <li>React Native</li>
+            <li>Spring Boot</li>
+            </div>
+            <div>
+            <li>PostgreSQL</li>
+            
+            </div>
+          </InnerBox>
+        </StyledDiv>
       </ProjectContainer>
     </div>
   );
@@ -73,6 +81,7 @@ const Button = styled.button`
   cursor: pointer;
   height: 3em;
   width: 10em;
+  font-size: 1.3rem;
 
   &:hover {
   border-color: black;
@@ -81,12 +90,31 @@ const Button = styled.button`
 `
 
 const StyledDiv = styled.div`
-  align-self: flex-start;
+  justify-items: center;
+  display: grid;
+
+  h3 {
+    font-size: 1.4rem;
+    justify-content: center;
+    margin-bottom: 0.7em;
+  
+  }
+
+  li {
+    font-size: 1.3rem;
+  }
+
+`
+
+const InnerBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
 `
 
 const Img = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
   border-radius: 0.4em;
   padding: 1em;
 `

@@ -7,7 +7,7 @@ const paragraphText2 = 'It was a challenging but fulfilling week as I applied th
 
 function ProjectOneView() {
   return (
-    <div>
+    <Wrapper>
       <H2>Fantasy Store</H2>
       <ProjectContainer>
         <Text>
@@ -33,7 +33,7 @@ function ProjectOneView() {
           <Button>Project Link</Button>
         </a>
       </ProjectContainer>
-    </div>
+    </Wrapper>
   );
 };
 
@@ -45,6 +45,7 @@ const H2 = styled.h2`
 `
 
 const ProjectContainer = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -83,7 +84,21 @@ const Button = styled.button`
 `
 const StyledDiv = styled.div`
   align-self: flex-start;
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  li {
+    font-size: 1.3rem;
+  }
+
 `
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 const Img = styled.img`
   width: 250px;

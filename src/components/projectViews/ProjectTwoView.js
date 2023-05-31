@@ -2,13 +2,21 @@ import React from 'react'
 import styled from 'styled-components';
 import testImg from '../../images/placeholder.png'
 
+const paragraphText1 = 'An educational game in the form of a quiz on the topic of climate change. The goal of the project was to create an interactive app that incorporated various question types, enabling users to explore the factors and consequences of climate change. Working as a team of four, we successfully completed the project within a week.'
+const paragraphText2 = 'We created APIs for the main features of the app to work such as the questions, users and keeping track of user’s score as they played the game. I enjoyed the experience of collaborating with my teammates, employing techniques such as pair programming and mob programming to tackle issues. As well as the workflow of using GitHub and Trello to divide tasks and merge our work.'
+
 function ProjectTwoView() {
   return (
-    <div>
+    <Wrapper>
       <H2>Climate Quiz</H2>
       <ProjectContainer>
         <Text>
-          <p>An educational game in the form of a quiz on the topic of climate change. The goal of the project was to create an interactive app that incorporated various question types, enabling users to explore the factors and consequences of climate change. Working as a team of four, we successfully completed the project within a week. We created APIs for the main features of the app to work such as the questions, users and keeping track of user’s score as they played the game. I enjoyed the experience of collaborating with my teammates, employing techniques such as pair programming and mob programming to tackle issues. As well as the workflow of using GitHub and Trello to divide tasks and merge our work. </p>
+          <p>
+            {paragraphText1}
+          </p>
+          <p>
+            {paragraphText2}
+          </p>
         </Text>
         <Img src={testImg} alt={"Project Picture"} />
         <StyledDiv>
@@ -24,7 +32,7 @@ function ProjectTwoView() {
           <Button>Project Link</Button>
         </a>
       </ProjectContainer>
-    </div>
+    </Wrapper>
   );
 };
 
@@ -46,6 +54,7 @@ const Text = styled.div`
 `
 
 const ProjectContainer = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -75,7 +84,22 @@ const Button = styled.button`
 
 const StyledDiv = styled.div`
   align-self: flex-start;
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  li {
+    font-size: 1.3rem;
+  }
+
 `
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 const Img = styled.img`
   width: 250px;
