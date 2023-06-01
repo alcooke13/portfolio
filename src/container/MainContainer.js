@@ -8,6 +8,9 @@ import ProjectOneView from "../components/projectViews/ProjectOneView";
 import ProjectTwoView from "../components/projectViews/ProjectTwoView";
 import ProjectThreeView from "../components/projectViews/ProjectThreeView"
 import ProjectFourView from "../components/projectViews/ProjectFourView";
+import gitHubLogo from '../../src/images/logos/github_logo.png'
+import linkedInLogo from '../../src/images/logos/linkedin_logo.png'
+
 
 function MainContainer() {
     const [pageContent, setPageContent] = useState("aboutMe");
@@ -40,14 +43,23 @@ function MainContainer() {
 
     return (
         <Main>
-            <Header>
+            <Header className="header">
                 <PictureBlock>
                     <Img src={profilePic} alt='headshot of me' />
                     <H1>Alistair Cooke</H1>
                 </PictureBlock>
+                <LogoWrapper>
+                    <a href="https://github.com/alcooke13" target="_blank" rel="noreferrer">
+                    <img src={gitHubLogo} alt='github' />
+                    </a>
+                    <a href="https://www.linkedin.com/in/alistair-cooke-860a98195/" target="_blank" rel="noreferrer">
+                    <img src={linkedInLogo} alt='LinkedIn' />
+                    </a>
+                </LogoWrapper>
+                
                 <NavBar setPageContent={setPageContent} />
             </Header>
-            <Content>
+            <Content className="content">
 
                 {pageContent === "aboutMe" ? <AboutMe /> : ""}
 
@@ -105,9 +117,22 @@ const PictureBlock = styled.div`
    gap: 25px;
    margin-left: 5%;
 
-@media (max-width: 900px) {
-    margin-left: 2%;
-}
+`
+
+const LogoWrapper = styled.div`
+    display: flex;
+    gap: 10px;
+    margin-left: -5%;
+    
+    @media (max-width:900px) {
+    gap: 3px;
+    margin-left: 0;
+    }
+
+    img {
+        height: 40px;
+        width: 40px;
+    }
 `
 
 const Img = styled.img`
@@ -128,7 +153,7 @@ const H1 = styled.h1`
     font-size: 1.7em;
 
 @media (max-width:900px) {
-    font-size: 0.8em;
+    display: none;
     
 }
 

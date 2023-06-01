@@ -34,6 +34,7 @@ const Li = styled.li`
     list-style: none;
     font-size: 1.7em;
     cursor: pointer;
+
 `
 
 export default NavBar;

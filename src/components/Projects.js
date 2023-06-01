@@ -202,8 +202,8 @@ const Button = styled.button`
     border-radius: .3em;
     cursor: pointer;
     align-self: center;
-    height: 3em;
-    width: 12em;
+    height: 2.5em;
+    width: 11em;
     font-size: 1.3rem;
 
     &:hover {
