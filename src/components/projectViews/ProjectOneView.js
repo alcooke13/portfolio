@@ -18,7 +18,11 @@ function ProjectOneView() {
             {paragraphText2}
           </p>
         </Text>
+        <ImgButtonBox>
+        <button className='arrow-left' onClick={() => console.log('hi')}/>
         <Img src={testImg} alt={"Project Picture"} />
+        <button className='arrow-right' onClick={() => console.log('hi')}/>
+        </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Used</h3>
           <InnerBox>
@@ -62,6 +66,17 @@ const ProjectContainer = styled.div`
   border-radius: 0.3em;
   padding: 1em;
   background-color: rgb(207, 207, 252);
+`
+
+const ImgButtonBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  @media(max-width: 800px) {
+  gap: 0;
+}
+
 `
 
 const Text = styled.div`
@@ -123,8 +138,8 @@ const Img = styled.img`
 
 
 @media(max-width: 800px) {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
 }
 `
 

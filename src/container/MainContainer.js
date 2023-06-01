@@ -73,7 +73,7 @@ const Footer = styled.footer`
     display: flex;
     justify-content: center;
     padding: 1em;
-    background:linear-gradient(to right, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
+    background:linear-gradient(to left, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
     position: relative;
     bottom: 0;
     color: white;

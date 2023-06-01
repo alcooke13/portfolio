@@ -1,19 +1,24 @@
 import React from 'react'
 import styled from 'styled-components';
 import testImg from '../../src/images/placeholder.png'
-import pythonLogo from '../../src/images/python.png'
-import htmlLogo from '../../src/images/html.png'
-import cssLogo from '../../src/images/css.png'
-import psqlLogo from '../../src/images/psql.png'
-import flaskLogo from '../../src/images/flask.png'
-import reactLogo from '../../src/images/react.png'
-import reactNativeLogo from '../../src/images/native.png'
-import mongoDBLogo from '../../src/images/mongodb.png'
-import expressLogo from '../../src/images/express.png'
-import jsLogo from '../../src/images/jjs.png'
-import springLogo from '../../src/images/spring.png'
-import javaLogo from '../../src/images/java.png'
-import tsLogo from '../../src/images/typescript.png'
+import pythonLogo from '../../src/images/logos/python.png'
+import htmlLogo from '../../src/images/logos/html.png'
+import cssLogo from '../../src/images/logos/css.png'
+import psqlLogo from '../../src/images/logos/psql.png'
+import flaskLogo from '../../src/images/logos/flask.png'
+import reactLogo from '../../src/images/logos/react.png'
+import reactNativeLogo from '../../src/images/logos/native.png'
+import mongoDBLogo from '../../src/images/logos/mongodb.png'
+import expressLogo from '../../src/images/logos/express.png'
+import jsLogo from '../../src/images/logos/jjs.png'
+import springLogo from '../../src/images/logos/spring.png'
+import javaLogo from '../../src/images/logos/java.png'
+import tsLogo from '../../src/images/logos/typescript.png'
+import fantasyImg from '../../src/images/ss/v1_fantasy.png'
+import climateImg from '../../src/images/ss/climate_ss1.png'
+import groupImg from '../../src/images/ss/group_1.png'
+import fantasyV2Img from '../../src/images/ss/V2_all.png' 
+
 
 function Projects({ setPageContent }) {
     return (
@@ -35,7 +40,7 @@ function Projects({ setPageContent }) {
                         <p>
                             A web app which simplifies the management of a fantasy themed store selling products enabling seamless inventory control.
                         </p>
-                        <ImgTest src={testImg} alt='Test image'/>
+                        <ImgTest src={fantasyImg} alt='Test image'/>
                         <Button onClick={() => setPageContent('projectOne')}>View Project</Button>
                     </InsideContainer>
                 </Li>
@@ -53,7 +58,7 @@ function Projects({ setPageContent }) {
                         <p>
                             A full stack app in the form of an educational quiz on climate change and the different factors which affect it.
                         </p>
-                        <ImgTest src={testImg} alt='Test image'/>
+                        <ImgTest src={climateImg} alt='Test image'/>
                         <Button onClick={() => setPageContent('projectTwo')}>View Project</Button>
                     </InsideContainer>
                 </Li>
@@ -72,7 +77,7 @@ function Projects({ setPageContent }) {
                         <p>
                             A mobile app designed to ease planning events and group gatherings with friends. With interactive features such as polls to ease the decision making process when planning a new gathering.
                         </p>
-                        <ImgTest src={testImg} alt='Test image'/>
+                        <ImgTest src={groupImg} alt='Test image'/>
                         <Button onClick={() => setPageContent('projectThree')}>View Project</Button>
                     </InsideContainer>
                 </Li>
@@ -91,7 +96,7 @@ function Projects({ setPageContent }) {
                         <p>
                             An updated and improved version of my first project. Which continues to simplify the management of a fantasy-themed store selling products using different programming languages and technologies.
                         </p>
-                        <ImgTest src={testImg} alt='Test image'/>
+                        <ImgTest src={fantasyV2Img} alt='Test image'/>
                         <Button onClick={() => setPageContent('projectFour')}>View Project</Button>
                     </InsideContainer>
                 </Li>
@@ -149,8 +154,8 @@ const Img = styled.img`
 `
 
 const ImgTest = styled.img`
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: auto;
     align-self: center;
     border-radius: 0.3em;
 
