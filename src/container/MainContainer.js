@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 import profilePic from "../images/profilepic.jpg"
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
-import Contacts from "../components/Contacts";
 import ProjectOneView from "../components/projectViews/ProjectOneView";
 import ProjectTwoView from "../components/projectViews/ProjectTwoView";
 import ProjectThreeView from "../components/projectViews/ProjectThreeView"
@@ -12,6 +11,32 @@ import ProjectFourView from "../components/projectViews/ProjectFourView";
 
 function MainContainer() {
     const [pageContent, setPageContent] = useState("aboutMe");
+    const [imgNum, setImgNum] = useState(1);
+
+
+    const goNextImg = () => {
+      if(imgNum <= 3){
+        setImgNum(number => number + 1);   
+      }
+    };
+  
+    const goBackImg = () => {
+      if(imgNum > 1){
+        setImgNum(number => number - 1);
+      }
+    };
+
+    const goNextImgLess = () => {
+        if(imgNum <= 2){
+          setImgNum(number => number + 1);
+        }
+      };
+    
+      const goBackImgLess = () => {
+        if(imgNum > 1){
+          setImgNum(number => number - 1);
+        }
+      };
 
     return (
         <Main>
@@ -26,17 +51,15 @@ function MainContainer() {
 
                 {pageContent === "aboutMe" ? <AboutMe /> : ""}
 
-                {pageContent === "projects" ? <Projects setPageContent={setPageContent}/> : ""}
-
-                {pageContent === "contacts" ? <Contacts /> : ""}
+                {pageContent === "projects" ? <Projects setImgNum = {setImgNum} setPageContent={setPageContent}/> : ""}
                 
-                {pageContent === "projectOne" ? <ProjectOneView /> : ""}
+                {pageContent === "projectOne" ? <ProjectOneView goBackImgLess={goBackImgLess} goNextImgLess={goNextImgLess} imgNum={imgNum} /> : ""}
                 
-                {pageContent === "projectTwo" ? <ProjectTwoView /> : ""}
+                {pageContent === "projectTwo" ? <ProjectTwoView goBackImgLess={goBackImgLess} goNextImgLess={goNextImgLess} imgNum={imgNum} /> : ""}
                 
-                {pageContent === "projectThree" ? <ProjectThreeView /> : ""}
+                {pageContent === "projectThree" ? <ProjectThreeView imgNum={imgNum} goBackImg={goBackImg} goNextImg={goNextImg}/> : ""}
                 
-                {pageContent === "projectFour" ? <ProjectFourView /> : ""}
+                {pageContent === "projectFour" ? <ProjectFourView imgNum={imgNum} goBackImg={goBackImg} goNextImg={goNextImg}/> : ""}
             </Content>
             <Footer>
                 <h4>Made by Alistair Cooke</h4>
@@ -49,12 +72,9 @@ const Main = styled.main`
     min-height: 100vh;
     position: relative;
     background-color: hsl(240, 90%, 96%);
-    overflow-x: hidden;
-    overflow-y: scroll;
 
 @media (max-width:900px) {
     min-width: fit-content;
-    
 }
 
 `

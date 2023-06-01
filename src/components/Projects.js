@@ -1,6 +1,5 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components';
-import testImg from '../../src/images/placeholder.png'
 import pythonLogo from '../../src/images/logos/python.png'
 import htmlLogo from '../../src/images/logos/html.png'
 import cssLogo from '../../src/images/logos/css.png'
@@ -20,7 +19,11 @@ import groupImg from '../../src/images/ss/group_1.png'
 import fantasyV2Img from '../../src/images/ss/V2_all.png' 
 
 
-function Projects({ setPageContent }) {
+function Projects({ setPageContent, setImgNum }) {
+    useEffect(() => {
+        setImgNum(1);
+    });
+    
     return (
         <ProjectBox>
             <H2>Projects</H2>

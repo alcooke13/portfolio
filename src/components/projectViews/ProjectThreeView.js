@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
-import testImg from '../../images/placeholder.png'
+import homeImg from '../../../src/images/ss/home_page_group.png'
+import emptyImg from '../../../src/images/ss/group_empty.png'
+import pollImg from '../../../src/images/ss/group_polls.png'
+import calenderImg from '../../../src/images/ss/group_calender.png'
 
 const paragraphText1 = 'For our capstone project, we created a mobile app designed to simplify the planning process for group gatherings among friends. We implemented functionalities such as polling for locations, activities, and dates. To accomplish this, we developed our own backend API using Java and Spring Boot. For the frontend we used TypeScript and React Native Expo. We developed this app as a team of four and successfully completed the project in two weeks.'
 const paragraphText2 = 'This was a challenging project as we decided to use TypeScript and React Native Expo which were not covered in the CodeClan curriculum. Although challenging, I enjoyed the experience of building upon the foundation provided by CodeClan and taking the initiative to self-learn these additional technologies. Through this experience, I was able to consolidate my knowledge and skills, ultimately resulting in the creation of an app that I am truly proud of.'
 
-function ProjectThreeView() {
+function ProjectThreeView({goNextImg, goBackImg, imgNum}) {
+ 
+
   return (
     <Wrapper>
       <H2>Group Up</H2>
@@ -18,7 +23,14 @@ function ProjectThreeView() {
             {paragraphText2}
           </p>
         </Text>
-        <Img src={testImg} alt={"Project Picture"} />
+        <ImgButtonBox>
+        <button className='arrow-left' onClick={goBackImg}/>
+        {imgNum === 1 ? <Img src={homeImg} alt='Home page'/>: ""}
+        {imgNum === 2 ? <Img src={emptyImg} alt='Group page no events planned'/>: ""}
+        {imgNum === 3 ? <Img src={pollImg} alt='Group page with polls'/>: ""}
+        {imgNum === 4 ? <Img src={calenderImg} alt='Calender View'/>: ""}
+        <button className='arrow-right' onClick={goNextImg}/>
+        </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Used</h3>
           <InnerBox>
@@ -75,6 +87,16 @@ const ProjectContainer = styled.div`
   background-color: rgb(207, 207, 252);
 `
 
+const ImgButtonBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  @media(max-width: 800px) {
+  gap: 0;
+}
+`
+
 const Button = styled.button`
   background:linear-gradient(to left, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
   color: #fff;    
@@ -121,14 +143,13 @@ const Wrapper = styled.div`
 `
 
 const Img = styled.img`
-  width: 400px;
-  height: 400px;
-  border-radius: 0.4em;
- 
+    width: 100%;
+    height: auto;
+    align-self: center;
+    border-radius: 0.3em;
+
   @media(max-width: 800px) {
-  width: 300px;
-  height: 300px;
+    object-fit: contain;
 }
 `
-
 export default ProjectThreeView;

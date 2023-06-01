@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
-import testImg from '../../images/placeholder.png'
+import imgHome from '../../../src/images/ss/climate_ss1.png'
+import imgQuestion from '../../../src/images/ss/climate_ss2.png'
+import imgEnd from '../../../src/images/ss/climate_ss3.png'
 
 const paragraphText1 = 'An educational game in the form of a quiz on the topic of climate change. The goal of the project was to create an interactive app that incorporated various question types, enabling users to explore the factors and consequences of climate change. Working as a team of four, we successfully completed the project within a week.'
 const paragraphText2 = 'We created APIs for the main features of the app to work such as the questions, users and keeping track of user’s score as they played the game. I enjoyed the experience of collaborating with my teammates, employing techniques such as pair programming and mob programming to tackle issues. As well as the workflow of using GitHub and Trello to divide tasks and merge our work.'
 
-function ProjectTwoView() {
+function ProjectTwoView({goNextImgLess, goBackImgLess, imgNum}) {
   return (
     <Wrapper>
       <H2>Climate Quiz</H2>
@@ -18,7 +20,13 @@ function ProjectTwoView() {
             {paragraphText2}
           </p>
         </Text>
-        <Img src={testImg} alt={"Project Picture"} />
+        <ImgButtonBox>
+        <button className='arrow-left' onClick={goBackImgLess}/>
+        {imgNum === 1 ? <Img src={imgHome} alt='Product list page'/>: ""}
+        {imgNum === 2 ? <Img src={imgQuestion} alt='Single product page'/>: ""}
+        {imgNum === 3 ? <Img src={imgEnd} alt='Edit product page'/>: ""}
+        <button className='arrow-right' onClick={goNextImgLess}/>
+        </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Used</h3>
           <InnerBox>
@@ -70,6 +78,16 @@ const ProjectContainer = styled.div`
   background-color: rgb(207, 207, 252);
 `
 
+const ImgButtonBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  @media(max-width: 800px) {
+  gap: 0;
+}
+`
+
 const Button = styled.button`
   background:linear-gradient(to left, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
   color: #fff;    
@@ -115,13 +133,13 @@ const Wrapper = styled.div`
 `
 
 const Img = styled.img`
-  width: 400px;
-  height: 400px;
-  border-radius: 0.4em;
+    width: 100%;
+    height: auto;
+    align-self: center;
+    border-radius: 0.3em;
 
   @media(max-width: 800px) {
-  width: 300px;
-  height: 300px;
+    object-fit: contain;
 }
 `
 export default ProjectTwoView;

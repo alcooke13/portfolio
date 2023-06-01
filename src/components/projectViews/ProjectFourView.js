@@ -1,10 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
-import testImg from '../../images/placeholder.png'
+import homeImg from '../../../src/images/ss/V2_all.png'
+import singleImg from '../../../src/images/ss/v2_product_single.png'
+import editImg from '../../../src/images/ss/v2_edit.png'
+import stockImg from '../../../src/images/ss/v2_stock_count.png'
 
 const paragraphText1 = 'A web application which updates and improves upon my first project. My goal for this project was to review and consolidate the knowledge and skills that I acquired during my time at CodeClan. To achieve this I chose to build a new code base using different technologies compared to version 1.0. This allowed me to further master tools such as  React, JavaScript, Java and Spring Boot.'
 const paragraphText2 = 'One specific aspect I wanted to focus on in this project was enhancing the user interface of the site. To accomplish this I completed a short course on CSS to sharpen my skills and applied what I learned to this new version. I am satisfied with the outcome of the project, as I was able to compare it with my first project and witness firsthand how much I have grown.'
-function ProjectFourView() {
+
+function ProjectFourView({goNextImg, goBackImg, imgNum}) {
+
   return (
     <Wrapper>
       <H2>Fantasy Store 2.0</H2>
@@ -17,7 +22,14 @@ function ProjectFourView() {
            {paragraphText2}
           </p>
         </Text>
-        <Img src={testImg} alt={"Project Picture"} />
+        <ImgButtonBox>
+        <button className='arrow-left' onClick={goBackImg}/>
+        {imgNum === 1 ? <Img src={homeImg} alt='Home page'/>: ""}
+        {imgNum === 2 ? <Img src={singleImg} alt='Page showing one product'/>: ""}
+        {imgNum === 3 ? <Img src={editImg} alt='Page to edit product details'/>: ""}
+        {imgNum === 4 ? <Img src={stockImg} alt='Modal for stock quantity'/>: ""}
+        <button className='arrow-right' onClick={goNextImg}/>
+        </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Useds</h3>
           <InnerBox>
@@ -72,6 +84,16 @@ const ProjectContainer = styled.div`
   background-color: rgb(207, 207, 252);
 `
 
+const ImgButtonBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  @media(max-width: 800px) {
+  gap: 0;
+}
+`
+
 const Button = styled.button`
   background:linear-gradient(to left, hsl(271, 70%, 40%), hsl(200, 100%, 30%));
   color: #fff;    
@@ -117,13 +139,13 @@ const Wrapper = styled.div`
 `
 
 const Img = styled.img`
-  width: 400px;
-  height: 400px;
-  border-radius: 0.4em;
- 
+    width: 100%;
+    height: auto;
+    align-self: center;
+    border-radius: 0.3em;
+
   @media(max-width: 800px) {
-  width: 300px;
-  height: 300px;
+    object-fit: contain;
 }
 `
 export default ProjectFourView;

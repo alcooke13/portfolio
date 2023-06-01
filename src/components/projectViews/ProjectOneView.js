@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
-import testImg from '../../images/placeholder.png'
+import imgAll from '../../images/ss/v1_fantasy.png'
+import img2Single from '../../images/ss/V1_SS2.png'
+import img3Edit from '../../images/ss/V1_SS3_50.png'
 
 const paragraphText1 = 'A full stack web application that I created using Flask. I drew inspiration from enjoying media in a fantasy setting  particularly games. The main goal of my project was to assist a merchant in a fantasy world with managing their products. The application allows users to easily create new products, modify details of existing ones and delete products from their inventory all while keeping track of stock.'
 const paragraphText2 = 'It was a challenging but fulfilling week as I applied the knowledge gained from the first module in CodeClan. I thoroughly enjoyed the experience and I’m proud of what I have accomplished as my first coding project.'
 
-function ProjectOneView() {
+function ProjectOneView({goNextImgLess, goBackImgLess, imgNum}) {
   return (
     <Wrapper>
       <H2>Fantasy Store</H2>
@@ -19,9 +21,11 @@ function ProjectOneView() {
           </p>
         </Text>
         <ImgButtonBox>
-        <button className='arrow-left' onClick={() => console.log('hi')}/>
-        <Img src={testImg} alt={"Project Picture"} />
-        <button className='arrow-right' onClick={() => console.log('hi')}/>
+        <button className='arrow-left' onClick={goBackImgLess}/>
+        {imgNum === 1 ? <Img src={imgAll} alt='Product list page'/>: ""}
+        {imgNum === 2 ? <Img src={img2Single} alt='Single product page'/>: ""}
+        {imgNum === 3 ? <Img src={img3Edit} alt='Edit product page'/>: ""}
+        <button className='arrow-right' onClick={goNextImgLess}/>
         </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Used</h3>
@@ -132,15 +136,10 @@ const Wrapper = styled.div`
 `;
 
 const Img = styled.img`
-  width: 400px;
-  height: 400px;
-  border-radius: 0.4em;
-
-
-@media(max-width: 800px) {
-  width: 280px;
-  height: 280px;
-}
+    width: 100%;
+    height: auto;
+    align-self: center;
+    border-radius: 0.3em;
 `
 
 export default ProjectOneView;
