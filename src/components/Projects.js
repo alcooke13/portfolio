@@ -115,7 +115,7 @@ const ProjectBox = styled.div`
 const Header = styled.header`
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    height: 30px;
 
     h3{
         font-size: 1.4rem;
