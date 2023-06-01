@@ -7,7 +7,7 @@ const paragraphText2 = 'This was a challenging project as we decided to use Type
 
 function ProjectThreeView() {
   return (
-    <div>
+    <Wrapper>
       <H2>Group Up</H2>
       <ProjectContainer>
         <Text>
@@ -19,9 +19,6 @@ function ProjectThreeView() {
           </p>
         </Text>
         <Img src={testImg} alt={"Project Picture"} />
-        <a href='https://github.com/alcooke13/group_app' target="_blank" rel="noreferrer">
-          <Button>Project Link</Button>
-        </a>
         <StyledDiv>
           <h3>Tools Used</h3>
           <InnerBox>
@@ -40,8 +37,11 @@ function ProjectThreeView() {
             </div>
           </InnerBox>
         </StyledDiv>
+        <a href='https://github.com/alcooke13/group_app' target="_blank" rel="noreferrer">
+          <Button>Project Link</Button>
+        </a>
       </ProjectContainer>
-    </div>
+    </Wrapper>
   );
 };
 
@@ -57,16 +57,18 @@ const Text = styled.div`
   gap: 1em;
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 `
 
 const ProjectContainer = styled.div`
   display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
   flex-direction: column;
+  overflow-x: hidden;
   gap: 1em;
   align-items: center;
-  padding: 1em;
   border: solid 2px black;
   border-radius: 0.3em;
   padding: 1em;
@@ -94,14 +96,14 @@ const StyledDiv = styled.div`
   display: grid;
 
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     justify-content: center;
     margin-bottom: 0.7em;
   
   }
 
   li {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
 `
@@ -112,11 +114,21 @@ const InnerBox = styled.div`
   gap: 2em;
 `
 
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
+
 const Img = styled.img`
   width: 400px;
   height: 400px;
   border-radius: 0.4em;
-  padding: 1em;
+ 
+  @media(max-width: 800px) {
+  width: 300px;
+  height: 300px;
+}
 `
 
 export default ProjectThreeView;

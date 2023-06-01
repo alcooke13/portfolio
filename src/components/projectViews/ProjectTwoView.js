@@ -21,12 +21,16 @@ function ProjectTwoView() {
         <Img src={testImg} alt={"Project Picture"} />
         <StyledDiv>
           <h3>Tools Used</h3>
-          <ul>
+          <InnerBox>
+          <div>
             <li>JavaScript</li>
             <li>React</li>
+          </div>
+          <div>
             <li>MongoDB</li>
             <li>Express</li>
-          </ul>
+          </div>
+          </InnerBox>
         </StyledDiv>
         <a href='https://github.com/alcooke13/climate_quiz' target="_blank" rel="noreferrer">
           <Button>Project Link</Button>
@@ -57,9 +61,9 @@ const ProjectContainer = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   gap: 1em;
   align-items: center;
-  padding: 1em;
   border: solid 2px black;
   border-radius: 0.3em;
   padding: 1em;
@@ -83,10 +87,14 @@ const Button = styled.button`
 `
 
 const StyledDiv = styled.div`
-  align-self: flex-start;
+  justify-items: center;
+  display: grid;
+
   
   h3 {
     font-size: 1.4rem;
+    justify-content: center;
+    margin-bottom: 0.7em;
   }
 
   li {
@@ -94,17 +102,26 @@ const StyledDiv = styled.div`
   }
 
 `
+const InnerBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4em;
+`
 
 const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`;
+`
 
 const Img = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
   border-radius: 0.4em;
-  padding: 1em;
+
+  @media(max-width: 800px) {
+  width: 300px;
+  height: 300px;
+}
 `
 export default ProjectTwoView;

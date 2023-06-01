@@ -6,7 +6,7 @@ const paragraphText1 = 'A web application which updates and improves upon my fir
 const paragraphText2 = 'One specific aspect I wanted to focus on in this project was enhancing the user interface of the site. To accomplish this I completed a short course on CSS to sharpen my skills and applied what I learned to this new version. I am satisfied with the outcome of the project, as I was able to compare it with my first project and witness firsthand how much I have grown.'
 function ProjectFourView() {
   return (
-    <div>
+    <Wrapper>
       <H2>Fantasy Store 2.0</H2>
       <ProjectContainer>
         <Text>
@@ -20,19 +20,25 @@ function ProjectFourView() {
         <Img src={testImg} alt={"Project Picture"} />
         <StyledDiv>
           <h3>Tools Useds</h3>
-          <ul>
+          <InnerBox>
+            <div>
             <li>JavaScript</li>
             <li>Java</li>
+            </div>
+            <div>
             <li>React</li>
             <li>PostgreSQL</li>
+            </div>
+            <div>
             <li>Spring Boot</li>
-          </ul>
+            </div>
+          </InnerBox>
         </StyledDiv>
         <a href='https://github.com/alcooke13/Fantasy_StoreV2' target="_blank" rel="noreferrer">
           <Button>Project Link</Button>
         </a>
       </ProjectContainer>
-    </div>
+    </Wrapper>
   );
 };
 
@@ -49,19 +55,20 @@ const Text = styled.div`
   gap: 1em;
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 `
 
 const ProjectContainer = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   gap: 1em;
   align-items: center;
   padding: 1em;
   border: solid 2px black;
   border-radius: 0.3em;
-  padding: 1em;
   background-color: rgb(207, 207, 252);
 `
 
@@ -73,7 +80,7 @@ const Button = styled.button`
   cursor: pointer;
   height: 3em;
   width: 10em;
-  font-size: 1.3rem;
+  font-size: 1.3em;
 
   &:hover {
   border-color: black;
@@ -82,22 +89,41 @@ const Button = styled.button`
 `
 
 const StyledDiv = styled.div`
-  align-self: flex-start;
+  justify-items: center;
+  display: grid;
 
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    justify-content: center;
+    margin-bottom: 0.7em;
   }
 
   li {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
+`
+
+const InnerBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+`
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `
 
 const Img = styled.img`
   width: 400px;
   height: 400px;
   border-radius: 0.4em;
-  padding: 1em;
+ 
+  @media(max-width: 800px) {
+  width: 300px;
+  height: 300px;
+}
 `
 export default ProjectFourView;

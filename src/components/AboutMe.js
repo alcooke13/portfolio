@@ -68,10 +68,14 @@ function AboutMe() {
 };
 
 const AboutContainer = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 
   .inner-container {
+    flex-grow: 1;
+    display: grid;
+    align-content: space-between;
     border: solid 2px black;
     border-radius: 0.3em;
     padding: 1em;

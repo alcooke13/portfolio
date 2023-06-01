@@ -49,6 +49,8 @@ const Main = styled.main`
     min-height: 100vh;
     position: relative;
     background-color: hsl(240, 90%, 96%);
+    overflow-x: hidden;
+    overflow-y: scroll;
 
 @media (max-width:900px) {
     min-width: fit-content;

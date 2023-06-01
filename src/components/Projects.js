@@ -142,6 +142,10 @@ const Img = styled.img`
     width: 35px;
     height: 35px;
 
+    @media(max-width: 800px) {
+    display: none;
+}
+
 `
 
 const ImgTest = styled.img`
