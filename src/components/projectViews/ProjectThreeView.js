@@ -24,12 +24,12 @@ function ProjectThreeView({goNextImg, goBackImg, imgNum}) {
           </p>
         </Text>
         <ImgButtonBox>
-        <button className='arrow-left' onClick={goBackImg}/>
+        <button className='arrow arrow-left' onClick={goBackImg}/>
         {imgNum === 1 ? <Img src={homeImg} alt='Home page'/>: ""}
         {imgNum === 2 ? <Img src={emptyImg} alt='Group page no events planned'/>: ""}
         {imgNum === 3 ? <Img src={pollImg} alt='Group page with polls'/>: ""}
         {imgNum === 4 ? <Img src={calenderImg} alt='Calender View'/>: ""}
-        <button className='arrow-right' onClick={goNextImg}/>
+        <button className='arrow arrow-right' onClick={goNextImg}/>
         </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Used</h3>

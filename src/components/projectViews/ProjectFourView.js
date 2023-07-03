@@ -23,12 +23,12 @@ function ProjectFourView({goNextImg, goBackImg, imgNum}) {
           </p>
         </Text>
         <ImgButtonBox>
-        <button className='arrow-left' onClick={goBackImg}/>
+        <button className='arrow arrow-left' onClick={goBackImg}/>
         {imgNum === 1 ? <Img src={homeImg} alt='Home page'/>: ""}
         {imgNum === 2 ? <Img src={singleImg} alt='Page showing one product'/>: ""}
         {imgNum === 3 ? <Img src={editImg} alt='Page to edit product details'/>: ""}
         {imgNum === 4 ? <Img src={stockImg} alt='Modal for stock quantity'/>: ""}
-        <button className='arrow-right' onClick={goNextImg}/>
+        <button className='arrow arrow-right' onClick={goNextImg}/>
         </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Useds</h3>

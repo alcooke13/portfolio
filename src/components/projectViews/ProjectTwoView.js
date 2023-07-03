@@ -21,11 +21,11 @@ function ProjectTwoView({goNextImgLess, goBackImgLess, imgNum}) {
           </p>
         </Text>
         <ImgButtonBox>
-        <button className='arrow-left' onClick={goBackImgLess}/>
+        <button className='arrow arrow-left' onClick={goBackImgLess}/>
         {imgNum === 1 ? <Img src={imgHome} alt='Product list page'/>: ""}
         {imgNum === 2 ? <Img src={imgQuestion} alt='Single product page'/>: ""}
         {imgNum === 3 ? <Img src={imgEnd} alt='Edit product page'/>: ""}
-        <button className='arrow-right' onClick={goNextImgLess}/>
+        <button className='arrow arrow-right' onClick={goNextImgLess}/>
         </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Used</h3>

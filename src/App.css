@@ -14,35 +14,32 @@ p {
     line-height: 1.25;
 }
 
-.arrow-left {
-    border: solid hsl(200, 100%, 30%);
-    border-width: 0 5px 5px 0;
+.arrow {
     display: inline-block;
     padding: 10px;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    background-color: transparent;
     cursor: pointer;
-
+    background-color: transparent;
+    
     @media (max-width: 800px){
         padding: 4px
     }
+}
+
+
+.arrow-left {
+    border: solid hsl(200, 100%, 30%);
+    border-width: 0 5px 5px 0;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 
 }
 
 .arrow-right {
     border: solid hsl(271, 70%, 40%);
     border-width: 0 5px 5px 0;
-    display: inline-block;
-    padding: 10px;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    background-color: transparent;
     cursor: pointer;
-
-    @media (max-width: 800px){
-        padding: 4px
-    }
 }
 
 .content {

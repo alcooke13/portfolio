@@ -21,11 +21,11 @@ function ProjectOneView({goNextImgLess, goBackImgLess, imgNum}) {
           </p>
         </Text>
         <ImgButtonBox>
-        <button className='arrow-left' onClick={goBackImgLess}/>
+        <button className='arrow arrow-left' onClick={goBackImgLess}/>
         {imgNum === 1 ? <Img src={imgAll} alt='Product list page'/>: ""}
         {imgNum === 2 ? <Img src={img2Single} alt='Single product page'/>: ""}
         {imgNum === 3 ? <Img src={img3Edit} alt='Edit product page'/>: ""}
-        <button className='arrow-right' onClick={goNextImgLess}/>
+        <button className='arrow arrow-right' onClick={goNextImgLess}/>
         </ImgButtonBox>
         <StyledDiv>
           <h3>Tools Used</h3>
@@ -73,6 +73,7 @@ const ProjectContainer = styled.div`
 `
 
 const ImgButtonBox = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
