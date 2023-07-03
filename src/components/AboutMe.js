@@ -73,7 +73,6 @@ const AboutContainer = styled.div`
   flex-direction: column;
 
   .inner-container {
-    flex-grow: 1;
     display: grid;
     align-content: space-between;
     border: solid 2px black;
